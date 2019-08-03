@@ -1,8 +1,8 @@
-const fastify = require('fastify')();
+const fastify = require("fastify")();
+const { register } = require("./routes");
+fastify.register(require("fastify-formbody"));
 
-fastify.get('/', function (request, reply) {
-    reply.send({ hello: 'world' });
-});
+register(fastify);
 
 fastify.listen(3000, function (err, address) {
     if (err) {
