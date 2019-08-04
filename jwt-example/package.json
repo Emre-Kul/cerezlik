@@ -9,6 +9,7 @@
   "author": "Emre Kul",
   "license": "ISC",
   "dependencies": {
+    "fastify-cookie": "^3.0.2",
     "jsonwebtoken": "^8.5.1"
   }
 }

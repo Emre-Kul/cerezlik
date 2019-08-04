@@ -1,9 +1,15 @@
+const jwt = require("jsonwebtoken");
 const config = require("./config.json");
 
-export function createJWT(payload) {
-    return payload;
+function createJWT(payload) {
+    return jwt.sign(payload, config.private_key);
 }
 
-export function validateJWT(JWTData) {
-
+function verifyJWT(token) {
+    return jwt.verify(token, config.private_key);
 }
+
+module.exports = {
+  createJWT,
+  verifyJWT
+};

@@ -1,6 +1,8 @@
 const fastify = require("fastify")();
 const { register } = require("./routes");
+
 fastify.register(require("fastify-formbody"));
+fastify.register(require('fastify-cookie'));
 
 register(fastify);
 
