@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service IntroductionService {
+    rpc SayMyName(IntroductionRequest) returns (IntroductionResponse){}
+}
+
+message IntroductionRequest {
+    string name = 1;
+}
+
+message IntroductionResponse {
+    string answer = 1;
+}

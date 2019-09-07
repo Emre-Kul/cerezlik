@@ -4,5 +4,3 @@ This repository is a collection of the basic projects of web related technologie
 GRPC, Node.js
 ### JWT-Example
 JWT, Node.js, Fastify 
-### SOCKET-Example
-....
