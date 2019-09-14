@@ -1,0 +1,14 @@
+{
+  "name": "generic-server-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Emre Kul",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fastify": "^2.8.0"
+  }
+}

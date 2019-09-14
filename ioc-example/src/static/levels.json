@@ -1,0 +1,38 @@
+[
+
+  {
+    "name": "level-1",
+    "actors": [
+      {
+        "type": "warrior",
+        "weapon": {
+          "type": "blade",
+          "attack": "100"
+        }
+      }
+    ]
+  },
+
+  {
+    "name": "level-1",
+    "actors": [
+
+      {
+        "type": "warrior",
+        "weapon": {
+          "type": "blade",
+          "attack": "100"
+        }
+      },
+      {
+        "type": "warrior",
+        "weapon": {
+          "type": "sword",
+          "attack": "100"
+        }
+      }
+
+    ]
+  }
+
+]
