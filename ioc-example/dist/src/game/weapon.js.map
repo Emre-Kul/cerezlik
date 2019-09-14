@@ -1,1 +1,0 @@
-{"version":3,"file":"weapon.js","sourceRoot":"","sources":["../../../src/game/weapon.ts"],"names":[],"mappings":";;;;;;;;AAAA,yCAAuC;AAGvC,IAAa,MAAM,GAAnB,MAAa,MAAM;IAIf;QAFiB,WAAM,GAAW,GAAG,CAAC;QAGlC,OAAO,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC;IAC9B,CAAC;IAED,SAAS;QACL,OAAO,IAAI,CAAC,MAAM,CAAC;IACvB,CAAC;CAEJ,CAAA;AAZY,MAAM;IADlB,sBAAU,EAAE;GACA,MAAM,CAYlB;AAZY,wBAAM"}

@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { TYPES } from "../base";
+import { TYPES } from "../types";
 import { Weapon } from "./weapon";
 
 @injectable()
