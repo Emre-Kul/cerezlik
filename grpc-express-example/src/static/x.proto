@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service ContentService {
+    rpc GetContent(ContentRequest) returns (ContentResponse){}
+}
+
+message ContentRequest {
+    string query = 1;
+}
+
+message ContentResponse {
+    string main = 1;
+    string fullQuery = 2;
+}
