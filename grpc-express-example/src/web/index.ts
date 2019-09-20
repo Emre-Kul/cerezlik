@@ -1,4 +1,10 @@
-import {WebApp} from "./web-app";
+import { Web } from "./web";
 
-const webApp = new WebApp();
-webApp.run();
+export class WebApp {
+
+    static run() {
+        Web.create().run();
+    }
+
+}
+

@@ -1,4 +1,9 @@
 import {Api} from "./api";
 
-const api = new Api();
-api.run();
+export class ApiApp {
+
+    static run() {
+        Api.create().run();
+    }
+
+}

@@ -9,7 +9,7 @@ export class ExpressServer {
     private options: IExpressServerOptions;
     private app: any;
 
-    constructor(options: IExpressServerOptions = { port: 3000 }) {
+    constructor(options: IExpressServerOptions) {
         this.app = express();
         this.options = options;
     }

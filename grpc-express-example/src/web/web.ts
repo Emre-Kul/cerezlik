@@ -1,13 +1,13 @@
 import { ExpressServer } from "../network/express-server";
 import { GRPCClient } from "../network/grpc-client";
 
-export class WebApp {
+export class Web {
 
     private server: any;
     private client: any;
 
     constructor() {
-        this.server = new ExpressServer();
+        this.server = new ExpressServer({ port: 3000 });
         this.client = new GRPCClient({
             serviceName: "ContentService",
             protoFileName: "x.proto",
@@ -33,6 +33,6 @@ export class WebApp {
     }
 
     static create() {
-        return new WebApp();
+        return new Web();
     }
 }

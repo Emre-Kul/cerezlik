@@ -1,5 +1,5 @@
 import { GRPCServer } from "../network/grpc-server";
-import {ContentService} from "./content-service";
+import { ContentService } from "./content-service";
 
 export class Api {
 
@@ -25,6 +25,10 @@ export class Api {
     private handleGetContent(data: any, cb: any) {
         const parsedQuery = JSON.parse(data.request.query);
         cb(null, { main: this.contentService.getContent(parsedQuery.name), fullQuery: data.request.query });
+    }
+
+    static create() {
+        return new Api();
     }
 
 }
