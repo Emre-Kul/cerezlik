@@ -1,39 +1,34 @@
 import grpc from "grpc";
-import path from "path";
 
-export interface IGRPCOptions {
+export type GRPCServerOptions = {
     port: number;
-    protoFileName: string;
-}
+    hostname: string;
+    protoFilePath: string;
+    secure?: boolean;
+};
 
 export class GRPCServer {
 
-    private readonly options: IGRPCOptions;
+    private readonly options: GRPCServerOptions;
     private instance: any;
     private proto: any;
 
-    constructor(options: IGRPCOptions) {
+    constructor(options: GRPCServerOptions) {
         this.options = options;
-
-        this.instance = this.create();
-        this.proto = this.loadProtoFile();
+        this.create();
     }
 
     listen() {
         this.instance.start();
     }
 
-    registerService(serviceName: any, impl: any) {
+    registerService(serviceName: string, impl: any) {
         this.instance.addService(this.proto[serviceName].service, impl);
     }
 
-    private loadProtoFile() {
-        return grpc.load(path.join(__dirname, '../../src/static/' + this.options.protoFileName));
-    }
-
     private create() {
-        const server = new grpc.Server();
-        server.bind(`127.0.0.1:${this.options.port}`, grpc.ServerCredentials.createInsecure());
-        return server;
+        this.instance = new grpc.Server();
+        this.proto = grpc.load(this.options.protoFilePath);
+        this.instance.bind(`${this.options.hostname}:${this.options.port}`, grpc.ServerCredentials.createInsecure());
     }
 }

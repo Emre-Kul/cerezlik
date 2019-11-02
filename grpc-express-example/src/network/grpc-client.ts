@@ -1,29 +1,38 @@
-import path from "path";
 import grpc from "grpc";
 
-export interface IGRPCClient {
-    url: string;
-    protoFileName: string;
+export type GRPCClientOptions = {
     serviceName: string;
-}
+    protoFilePath: string;
+    url: string;
+};
+
 export class GRPCClient {
 
-    private readonly options: IGRPCClient;
-    app: any;
+    private readonly options: GRPCClientOptions;
+    private app: any;
 
-    constructor(options: IGRPCClient) {
+    constructor(options: GRPCClientOptions) {
         this.options = options;
-        this.app = this.create();
+        this.create();
     }
 
 
     private create() {
-        // normal path is ../static but i do not want to copy shit around
-        const PROTO_PATH = path.join(__dirname, '../../src/static/' + this.options.protoFileName);
-        const service = grpc.load(PROTO_PATH)[this.options.serviceName];
+        const service = grpc.load(this.options.protoFilePath)[this.options.serviceName];
         // @ts-ignore
-        return new service(this.options.url, grpc.credentials.createInsecure());
+        this.app = service(this.options.url, grpc.credentials.createInsecure());
+
     }
 
+    fetch(serviceMethodName: string, payload: any) {
+        return new Promise( (resolve, reject) => {
+            this.app[serviceMethodName](payload, (err: any, res: any) => {
+                if(err) {
+                    reject(err);
+                }
+                resolve(res);
+            });
+        });
+    }
 
 }

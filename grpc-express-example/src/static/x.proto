@@ -6,6 +6,8 @@ service ContentService {
 
 message ContentRequest {
     string query = 1;
+    string cookies = 2;
+    string headers = 3;
 }
 
 message ContentResponse {

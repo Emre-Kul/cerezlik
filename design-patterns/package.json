@@ -1,0 +1,16 @@
+{
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "build:watch": "node_modules/.bin/tsc -w",
+    "run:strategy": "node src/strategy.js",
+    "run:decorator": "node src/decorator.js",
+    "run:factory": "node src/factory.js"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
+}
