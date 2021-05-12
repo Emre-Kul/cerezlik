@@ -18,6 +18,6 @@
   "dependencies": {
     "@grpc/proto-loader": "^0.5.2",
     "express": "^4.17.1",
-    "grpc": "^1.23.3"
+    "grpc": "^1.24.9"
   }
 }
